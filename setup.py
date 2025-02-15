@@ -4,15 +4,14 @@ from typing import List
 HYPHEN_E_DOT = '-e .'
 
 def get_requirements(file_path: str) -> List[str]:
+    requirements = []
     try:
-        with open(file_path, 'r') as file:
-            requirements = file.read().splitlines()
-            # Filter out '-e .' if it exists
-            requirements = [req for req in requirements if req.strip() and req != HYPHEN_E_DOT]
-            return requirements
+        with open(file_path, 'r') as file_obj:
+            requirements = file_obj.readlines()
+            requirements = [req.strip() for req in requirements if req.strip() and req.strip() != HYPHEN_E_DOT]
     except FileNotFoundError:
         print(f"Error: {file_path} not found.")
-        return []
+    return requirements
 
 setup(
     name='MLProject',
