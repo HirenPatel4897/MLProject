@@ -6,4 +6,6 @@ seaborn
 jupyter
 tensorflow
 keras
+catboost
+xgboost
 -e .
