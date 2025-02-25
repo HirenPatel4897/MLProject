@@ -8,4 +8,5 @@ tensorflow
 keras
 catboost
 xgboost
--e .
+dill
+#-e .
